@@ -88,6 +88,7 @@ import { ElSpinner } from './spinner'
 import { ElDescriptions } from './descriptions'
 import { ElDescriptionsItem } from './descriptions-item'
 import { ElResult } from './result'
+import { ElTandayuan } from './tandayuan'
 
 export interface InstallationOptions {
   locale: any,
@@ -376,3 +377,5 @@ export class DescriptionsItem extends ElDescriptionsItem {}
 
 /** Result Component */
 export class Result extends ElResult {}
+/** Tandayuan Component */
+export class Tandayuan extends ElTandayuan {}

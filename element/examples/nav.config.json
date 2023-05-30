@@ -307,6 +307,10 @@
             {
               "path": "/drawer",
               "title": "Drawer 抽屉"
+            },
+            {
+              "path": "/tandayuan",
+              "title": "Tandayuan 谭达源组件"
             }
           ]
         }
@@ -621,6 +625,10 @@
             {
               "path": "/drawer",
               "title": "Drawer"
+            },
+            {
+              "path": "/tandayuan",
+              "title": "Tandayuan"
             }
           ]
         }
@@ -935,6 +943,10 @@
             {
               "path": "/drawer",
               "title": "Drawer"
+            },
+            {
+              "path": "/tandayuan",
+              "title": "Tandayuan"
             }
           ]
         }
@@ -1249,6 +1261,10 @@
             {
               "path": "/drawer",
               "title": "Drawer"
+            },
+            {
+              "path": "/tandayuan",
+              "title": "Tandayuan"
             }
           ]
         }

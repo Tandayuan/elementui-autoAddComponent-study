@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>预览本地上传的图片</title>
+    <style>
+      label {
+        background-color: #7f9ccb;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px ridge black;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="fileUpload">上传预览图片</label>
+    <input
+      type="file"
+      name="fileUpload"
+      id="fileUpload"
+      accept=".jpg, .jpeg, .png"
+    />
+    <div id="previewBox"></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
