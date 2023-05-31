@@ -22,7 +22,7 @@
 + [x] 学习流(Stream)、Blob、文件(File)的定义
 + [x] 学习Base64、Blob、File 三种类型的相互转换
 + [x] 学习主流编码规则的特点(UTF-8、ASCII、GBK……)
-+ [ ] 学习npm包`file-save`在本项目的应用
++ [x] 学习npm包`file-save`在本项目的应用
 
 # 了解Makefile的作用
 
@@ -128,3 +128,27 @@
 > Unicode 转换格式 (UTF) 是从每个 Unicode 码位（代理代码点除外）到唯一字节序列的算法映射。我的理解是，utf-8的算法解析Unicode的码位变成二进制位数据，再把这些数据以8位组成单个字节以及utf-8的其他算法组成唯一字节序列。（utf-8的算法映射详解：[一文看懂ASCII,UNICODE,UTF8编码规则](https://zhuanlan.zhihu.com/p/475820456)）
 
 # 学习npm包`file-save`在本项目的应用
+
+> file-save包我的理解是是利用了nodejs的fs、path等API创建一个可写流，将文本数据写入/覆盖到指定的文件中。
+>
+> [file-save官方文档](https://www.npmjs.com/package/file-save)
+
+> 简单实现Demo：
+>
+> ```javascript
+> const curFP = path.join(__dirname, 'test.txt');
+> const writeStream = fs.createWriteStream(curFP, { flags: 'a' });
+> writeStream.write('谭达源的一些可写流数据');
+> writeStream.end();
+> writeStream.on('finish', () => {
+>   console.log('Write file finish.');
+> });
+> ```
+>
+> ChatGPT的解释：
+>
+> 在示例中，首先使用path模块的join方法获取要创建文件的完整路径，然后使用fs.createWriteStream方法创建一个可写流，指定要创建的文件路径和选项对象{flags: ‘a’}，其中flags选项表示文件的打开方式。此处使用’a’表示以追加模式写入文件。如果文件已经存在，则新写入的数据将添加在文件末尾。如果不指定flags选项，则默认以覆盖模式打开文件，即写入数据前会清空文件原有内容。
+>
+> 接下来，使用writeStream.write方法将数据写入文件，然后使用writeStream.end方法结束写入流并关闭文件。为了确定写入已完成，我们可以使用writeStream的’finish’事件监听器，在文件写入完成后打印一条信息。
+>
+> 需要注意的是，writeStream.write方法可以多次调用，每次调用都会写入一个数据块到文件中。而一旦调用了writeStream.end方法，则writeStream就无法再写入数据了。在每次写入数据前，也可以使用writeStream.write方法的回调函数来处理写入数据的错误信息。
